@@ -1,11 +1,11 @@
 
 public class User {
-	private double R;
-	private boolean ON;
-	public double I;
-	public boolean Connected;
+	private double R; // опір користувача
+	private boolean ON; // вімкн./вимкн.
+	public double I; // сила струму
+	public boolean Connected; // чи користувач з'єднано з генератором
 	
-	User(double R, boolean ON)
+	User(double R, boolean ON) // конструктор
 	{
 		this.R = R;
 		this.ON = ON;
@@ -13,27 +13,32 @@ public class User {
 		this.Connected = false;
 	}
 	
-	public double GetUserR()
+	public double GetUserR() // отримати значення опору користувача
 	{
 		return this.R;
 	}
 	
-	public double GetUserI()
+	public double GetUserI() // отримати значення сили струму користувача
 	{
 		return this.I;
 	}
 	
-	public boolean IsUserON()
+	public boolean IsUserON() // чи користувач вімкн.
 	{
 		return this.ON;
 	}
 	
-	public void SetUserR(double R)
+	public boolean IsUserConnected() // чи користувач з'єднано за генератором 
+	{
+		return this.Connected;
+	}
+	
+	public void SetUserR(double R) // встановити опір користувача
 	{
 		this.R = R;
 	}
 	
-	public void TurnUser()
+	public void TurnUser() // вимкн. користувача, якщо він вімкн. чи вимкн., якщо вімкн.
 	{
 		if(this.ON == true)
 			this.ON = false;
